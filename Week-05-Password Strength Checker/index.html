@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Password strength analyser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Password strength analyser</h1>
+    <p class="sub">Type a password to see how well it would hold up. Nothing leaves your browser.</p>
+
+    <label for="pw">Password</label>
+    <div class="field">
+      <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="Enter a password">
+      <button id="toggle" type="button" aria-pressed="false">Show</button>
+    </div>
+
+    <div class="meter" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="summary" aria-live="polite">
+      <span class="verdict" id="verdict">Enter a password</span>
+      <span class="crack" id="crack"></span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="sLen">0</b><small>Characters</small></div>
+      <div class="stat"><b id="sEnt">0</b><small>Bits of entropy</small></div>
+      <div class="stat"><b id="sScore">0</b><small>Score out of 100</small></div>
+    </div>
+
+    <h2>Checks</h2>
+    <ul id="checks"></ul>
+
+    <h2>How to improve it</h2>
+    <ul id="tips" class="tips"><li>Start typing to get suggestions.</li></ul>
+
+    <p class="note">Entropy and crack time are estimates that assume random guessing. Real attackers try common passwords and patterns first, so avoid anything predictable.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
